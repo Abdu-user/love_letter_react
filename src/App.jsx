@@ -6,26 +6,21 @@ function App() {
   const [buttonSize, setButtonSize] = useState(1);
   const [count, setCount] = useState(0);
 
-  const texts = ["Жоқ 1", "Жоқ 2", "Жоқ 3", "Жоқ 4", "Жоқ 5", "Жоқ 6", "Жоқ 7", "Жоқ 8", "Жоқ 9"];
-  const [buttonText, setButtoText] = useState(texts[count]);
-  function hanldeReject() {
-    setButtonSize(
-      (p) => p + 0.6,
-      // (p * 0.5 > 2 ? 2 : p * 0.5)
-    );
-    setCount((c) => c + 1);
-    setButtoText(texts[count + 1]);
-    console.log("sss", buttonSize);
+  const texts = ["Өй жоқ", "Анық емес", "Әйтсе не", "Тәй ", "Ойындан", "Ешқашан!", "Жоқ пе!", "Бәлгі жоқ", "Ешеуге да жоқ"];
+  const [buttonText, setButtonText] = useState(texts[count]);
+
+  function handleReject() {
+    if (count < texts.length - 1) {
+      setButtonSize((p) => p + 0.6);
+      setCount((c) => c + 1);
+      setButtonText(texts[count + 1]);
+    }
   }
 
   // const window = useRef();
 
   return (
-    <div className="flex max-w-[100vw] ">
-      {/* <div
-        style={{ background: "var(--bg-gradient)" }}
-        className=" w-[80vw] h-[80dvh] px-4  overflow-auto  border-[1px] rounded-3xl "
-      > */}
+    <div className="flex max-w-[100vw]">
       {showImage ? (
         <>
           <img
@@ -41,10 +36,12 @@ function App() {
             alt=""
             className="object-cover w-full max-w-md mt-2 rounded-2xl aspect-square"
           />
-          <p className="mt-4 text-іxl font-bold text-pink-800">
-            Шахзода Менің силығымды кабылдайсың ба?
+          <p className="mt-4 text-2xl font-bold text-center text-pink-900">
+            Шахзода 💕
             <br />
-            ♥️🧸💌🏹
+            Менің силығымды кабылдайсың ба?
+            <br />
+            <span className="text-3xl">♥️🧸💌🏹</span>
           </p>
 
           <div
@@ -55,25 +52,23 @@ function App() {
           >
             <button
               onClick={() => setShowImage(true)}
-              className={` ml-auto px-4 py-2 mt-4 text-white bg-green-600 rounded-lg`}
+              className="px-6 py-3 mt-4 ml-auto font-bold text-white transition-all duration-200 ease-in-out transform bg-green-500 rounded-lg shadow-lg hover:bg-green-600 hover:scale-105"
               style={{
                 width: ` ${(buttonSize * 80).toFixed(0)}px`,
                 height: ` ${(buttonSize * 30 + 30).toFixed(0)}px`,
-                transform: ``,
               }}
             >
-              Иә
+              Иә ❤️
             </button>
             <button
-              onClick={hanldeReject}
-              className="px-4 py-2 mt-4 mr-auto text-white bg-red-600 rounded-lg"
+              onClick={handleReject}
+              className="px-4 py-2 mt-4 mr-auto font-bold text-white transition-all duration-200 ease-in-out transform bg-red-500 rounded-lg shadow-lg hover:bg-red-600 hover:-translate-y-1"
             >
               {buttonText}
             </button>
           </div>
         </div>
       )}
-      {/* </div> */}
     </div>
   );
 }
