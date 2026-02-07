@@ -27,27 +27,29 @@ function App() {
         className=" w-[80vw] h-[80dvh] px-4  overflow-auto  border-[1px] rounded-3xl "
       > */}
       {showImage ? (
-        <img
-          src="/happy-cat-cat.gif"
-          alt=""
-        />
+        <>
+          <img
+            src="/happy-cat-cat.gif"
+            alt=""
+          />
+        </>
       ) : (
         <div className="flex flex-col items-center w-full h-full justify-evenly">
           <h1 className="mt-8 mb-2 text-4xl font-bold text-pink-900">♥️🧸💌🏹</h1>
           <img
             src="/gojo-flower.jpg"
             alt=""
-            className="object-cover mt-2 rounded-2xl aspect-square"
+            className="object-cover w-full max-w-md mt-2 rounded-2xl aspect-square"
           />
           <p className="mt-4 text-іxl font-bold text-pink-800">
-            Мениң силығымды кабылдайсың ба?
+            Шахзода Менің силығымды кабылдайсың ба?
             <br />
             ♥️🧸💌🏹
           </p>
 
           <div
             style={{
-              gridTemplateColumns: "1fr 1fr",
+              gridTemplateColumns: "auto auto",
             }}
             className="grid items-center justify-center w-full max-w-full gap-3 px-1 mx-auto overflow-hidden transition-all "
           >
