@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -6,21 +6,41 @@ function App() {
   const [buttonSize, setButtonSize] = useState(1);
   const [count, setCount] = useState(0);
 
-  const texts = ["жок", "неден", "(((", "токтааааа ", "жанемммм нетттт", "солга солга солга!", "Жоқ пе!", "АААААААААААА"];
+  const texts = [
+    "жок",
+    "неден",
+    "(((",
+    "токтааааа ",
+    "жанемммм нетттт",
+    "солга солга солга!",
+    "Жоқ пе!",
+    "АААААААААААА",
+    "AAAAAAAAA",
+    "AAAAAAAAA",
+    "AAAAAAAAA",
+    "AAAAAAAAA",
+    "AAAAAAAAA",
+    "AAAAAAAAA",
+    "AAAAAAAAA",
+    "AAAAAAAAA",
+  ];
   const [buttonText, setButtonText] = useState(texts[count]);
+  const buttonRef = useRef(null);
 
   function handleReject() {
-    if (count < texts.length - 1) {
-      setButtonSize((p) => p + 0.6);
-      setCount((c) => c + 1);
-      setButtonText(texts[count + 1]);
-    }
+    // if (count < texts.length - 1) {
+    setButtonSize((p) => p + 0.6);
+    setCount((c) => c + 1);
+    setButtonText(texts[count + 1]);
+
+    buttonRef.current.scrollIntoView({ behavior: "smooth" });
+    console.log(buttonSize);
   }
 
   // const window = useRef();
 
   return (
-    <div className="flex max-w-[100vw]">
+    <div className="flex max-w-[100vw] py-10">
       {showImage ? (
         <div className="flex flex-col ">
           <h1 className="mb-4 text-4xl text-black">Yappy</h1>
@@ -33,7 +53,7 @@ function App() {
         </div>
       ) : (
         <div className="flex flex-col items-center w-full h-full justify-evenly">
-          <h1 className="mt-8 mb-2 text-4xl font-bold text-pink-900">♥️🧸💌🏹</h1>
+          {/* <h1 className="mt-8 mb-2 text-4xl font-bold text-pink-900">♥️🧸💌🏹</h1> */}
           {/* <img
             src="/gojo-flower.jpg"
             alt=""
@@ -71,6 +91,7 @@ function App() {
             </button>
             <button
               onClick={handleReject}
+              ref={buttonRef}
               className="px-4 py-2 mt-4 mr-auto font-bold text-white transition-all duration-200 ease-in-out transform bg-red-500 rounded-lg shadow-lg hover:bg-red-600 hover:-translate-y-1"
             >
               {buttonText}
