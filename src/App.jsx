@@ -22,20 +22,29 @@ function App() {
   return (
     <div className="flex max-w-[100vw]">
       {showImage ? (
-        <>
-          <img
-            src="/happy-cat-cat.gif"
-            alt=""
-          />
-        </>
+        <div className="flex flex-col ">
+          <h1 className="mb-4 text-4xl text-black">Yappy</h1>
+          <video
+            autoPlay
+            muted
+            loop
+            src="/cat-cute.gif.mp4"
+          ></video>
+        </div>
       ) : (
         <div className="flex flex-col items-center w-full h-full justify-evenly">
           <h1 className="mt-8 mb-2 text-4xl font-bold text-pink-900">♥️🧸💌🏹</h1>
-          <img
+          {/* <img
             src="/gojo-flower.jpg"
             alt=""
             className="object-cover w-full max-w-md mt-2 rounded-2xl aspect-square"
-          />
+          /> */}
+          <video
+            autoPlay
+            muted
+            loop
+            src="/kiss-kissing.gif.mp4"
+          ></video>
           <p className="mt-4 text-2xl font-bold text-center text-pink-900">
             Шахзода 💕
             <br />
