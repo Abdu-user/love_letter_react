@@ -77,7 +77,7 @@ function App() {
             style={{
               gridTemplateColumns: "auto auto",
             }}
-            className="grid items-center justify-center w-full max-w-full gap-3 px-1 mx-auto overflow-hidden transition-all "
+            className="grid items-center justify-center w-full max-w-full gap-3 px-1 mx-auto transition-all "
           >
             <button
               onClick={() => setShowImage(true)}
