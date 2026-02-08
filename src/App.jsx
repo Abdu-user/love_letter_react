@@ -14,7 +14,6 @@ function App() {
     "жанемммм нетттт",
     "солга солга солга!",
     "Жоқ пе!",
-    "АААААААААААА",
     "AAAAAAAAA",
     "AAAAAAAAA",
     "AAAAAAAAA",
@@ -33,7 +32,8 @@ function App() {
     setCount((c) => c + 1);
     setButtonText(texts[count + 1]);
 
-    buttonRef.current.scrollIntoView({ behavior: "smooth" });
+    // if()
+    // buttonRef.current.scrollIntoView({ behavior: "smooth" });
     console.log(buttonSize);
   }
 
@@ -54,30 +54,29 @@ function App() {
       ) : (
         <div className="flex flex-col items-center w-full h-full justify-evenly">
           {/* <h1 className="mt-8 mb-2 text-4xl font-bold text-pink-900">♥️🧸💌🏹</h1> */}
-          {/* <img
-            src="/gojo-flower.jpg"
+          <img
+            src="/kiss-kissing-hp.gif"
             alt=""
             className="object-cover w-full max-w-md mt-2 rounded-2xl aspect-square"
-          /> */}
-          <video
+          />
+          {/* <video
             autoPlay
             muted
             loop
             src="/kiss-kissing.gif.mp4"
-          ></video>
+          ></video> */}
           <p className="mt-4 text-2xl font-bold text-center text-pink-900">
-            Шахзода 💕
             <br />
-            Менің силығымды кабылдайсың ба?
+            Жаным менің силығымды кабылдайсың ба? 💕
             <br />
-            <span className="text-3xl">♥️🧸💌🏹</span>
+            {/* <span className="text-3xl">♥️🧸💌🏹</span> */}
           </p>
 
           <div
             style={{
               gridTemplateColumns: "auto auto",
             }}
-            className="grid items-center justify-center w-full max-w-full gap-3 px-1 mx-auto transition-all "
+            className="grid items-center justify-center w-full max-w-full gap-3 px-1 mx-auto overflow-x-hidden transition-all "
           >
             <button
               onClick={() => setShowImage(true)}
@@ -87,7 +86,7 @@ function App() {
                 height: ` ${(buttonSize * 30 + 30).toFixed(0)}px`,
               }}
             >
-              Иә ❤️
+              Иә
             </button>
             <button
               onClick={handleReject}
