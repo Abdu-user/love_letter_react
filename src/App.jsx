@@ -6,7 +6,7 @@ function App() {
   const [buttonSize, setButtonSize] = useState(1);
   const [count, setCount] = useState(0);
 
-  const texts = ["Өй жоқ", "Анық емес", "Әйтсе не", "Тәй ", "Ойындан", "Ешқашан!", "Жоқ пе!", "Бәлгі жоқ", "Ешеуге да жоқ"];
+  const texts = ["жок", "неден", "(((", "токтааааа ", "жанемммм нетттт", "солга солга солга!", "Жоқ пе!", "АААААААААААА"];
   const [buttonText, setButtonText] = useState(texts[count]);
 
   function handleReject() {
