@@ -54,7 +54,7 @@ function App() {
             alt=""
             className="object-cover w-full max-w-md mt-2 rounded-2xl aspect-square"
           />
-          <h1 className="mb-4 text-4xl text-black">Yappy</h1>
+          <h1 className="mb-4 text-4xl text-black">Yappyyyyyyyyyyyyyyy</h1>
         </div>
       ) : (
         <div className="flex flex-col items-center w-full h-full justify-evenly">
