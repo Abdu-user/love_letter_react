@@ -80,6 +80,7 @@ function App() {
           <div
             style={{
               gridTemplateColumns: "auto auto",
+              scrollbarWidth: 0,
             }}
             className="grid items-center justify-center w-full max-w-full gap-3 px-1 mx-auto overflow-x-hidden transition-all "
           >
